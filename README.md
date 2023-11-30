@@ -1,8 +1,4 @@
-# React + Vite
+Este proyecto contempla el aprendizaje y implementación de la libreria React, junto a otras como React-Route-Dom, y también el uso de api's.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+La web esta pensada para ser un proyecto DOM , de fácil uso para el usuario y con una navegación entre pestañas que solo tengas que hacer click.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

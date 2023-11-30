@@ -1,0 +1,7 @@
+.FooterDesign{
+    background-color: skyblue;
+    color:black;
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content:end;
+}
