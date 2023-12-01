@@ -1,6 +1,6 @@
 import './Busqueda.css'
 
-export const Home = () => {
+export const Busqueda = () => {
     return (
         <div className="BusquedaDesign">
             <h1>Soy una busqueda</h1>

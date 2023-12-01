@@ -1,9 +1,13 @@
 import './Footer.css'
 
 export const Footer = () => {
-    <Footer className = "FooterDesign">
-        
-        Web creada por FackYeahNeko 2023.
+    return (
+   <> 
+        <div className = "FooterDesign">
+            
+            Web creada por FackYeahNeko 2023.
 
-    </Footer>
+        </div>
+    </>
+    )
 }
