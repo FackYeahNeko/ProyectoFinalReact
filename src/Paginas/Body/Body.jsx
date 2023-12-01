@@ -1,8 +1,8 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { Home } from '../Home/Home'
+import { Home } from '../Home/Home.jsx'
 import { Busqueda } from '../Busqueda/Busqueda'
-import { MejorValoradas } from '../MejorValoradas/MejorValoradas'
-import { Recientes } from '../Recientes/Recientes'
+import { MejorValoradas } from '../MejorValoradas/MejorValoradas.jsx'
+import { Recientes } from '../Recientes/Recientes.jsx'
 
 
 export const Body = () => {
