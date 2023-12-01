@@ -1,9 +1,9 @@
 
 import './App.css'
 
-import { Header } from '.ModulosPrincipales/Header/Header'
-import { Body } from '.ModulosPrincipales/Body/Body'
-import { Footer } from '.ModulosPrincipales/Footer/Footer'
+import { Header } from './ModulosPrincipales/Header/Header'
+import { Body } from './Paginas/Body/Body'
+import { Footer } from './ModulosPrincipales/Footer/Footer'
 
 function App() {
   
