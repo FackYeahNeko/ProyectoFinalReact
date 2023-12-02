@@ -1,0 +1,13 @@
+.ModuloPelicula {
+    border-radius: 20px;
+    border-color: solid black;
+}
+
+.ModuloPelicula img {
+    max-width: 300px; /* Establece el ancho máximo en 300 píxeles */
+    max-height: 450px; /* Establece la altura máxima en 450 píxeles */
+    width: auto; /* Ajusta automáticamente la altura para mantener la proporción original */
+    height: auto; /* Ajusta automáticamente el ancho para mantener la proporción original */
+}
+
+
