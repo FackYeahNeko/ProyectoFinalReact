@@ -1,6 +1,9 @@
 .ModuloPelicula {
     border-radius: 20px;
     border-color: solid black;
+    border-width: 1px;
+    margin-right: 10px;
+    color: white;
 }
 
 .ModuloPelicula img {

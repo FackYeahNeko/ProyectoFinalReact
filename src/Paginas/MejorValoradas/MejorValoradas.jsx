@@ -32,6 +32,7 @@ export const MejorValoradas = () => {
   return (
     <div className="RecientesDesign">
       <h1>Las 10 Películas mejor Valoradas</h1>
+      <div className = "ModulosPeliculasDesign">
 
       {moviesData.map(movie => (
         <ModuloPelicula
@@ -40,6 +41,7 @@ export const MejorValoradas = () => {
           backdropPath={movie.backdrop_path}
         />
       ))}
+      </div>
     </div>
   );
 };

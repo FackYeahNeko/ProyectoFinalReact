@@ -1,7 +1,13 @@
 .FooterDesign{
     background-color: skyblue;
+    height: max-content;
     color:black;
     display:flex;
-    flex-direction: row-reverse;
-    justify-content:end;
+    flex-direction:row-reverse;
+    
+    border-radius: 10px;
+
+    position: fixed;
+    bottom: 0;
+    left: 85%;
 }

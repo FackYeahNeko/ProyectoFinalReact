@@ -34,7 +34,7 @@ export const Recientes = () => {
   return (
     <div className="RecientesDesign">
       <h1>Últimas 10 películas añadidas</h1>
-
+       <div className = "ModulosPeliculasDesign">
       {moviesData.map(movie => (
         <ModuloPelicula
           key={movie.id}
@@ -42,6 +42,7 @@ export const Recientes = () => {
           backdropPath={movie.backdrop_path}
         />
       ))}
+      </div>
     </div>
   );
 };
