@@ -26,3 +26,8 @@
      grid-area: PeliculasColumn;
      gap: 10px;
  }
+
+ .DetalleColumn {
+    position: sticky;
+    
+ }
