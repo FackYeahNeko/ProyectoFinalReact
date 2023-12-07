@@ -59,16 +59,17 @@ const handleMovieClick = async (identificador) => {
   return (
     <div className="RecientesDesign">
       <h1>Últimas 10 películas añadidas</h1>
-       <div className = "ModulosPeliculasDesign">
-      {moviesData.map(movie => (
-        <ModuloPelicula
-          key={movie.id}
-          title={movie.title}
-          backdropPath={movie.backdrop_path}
-          onClick={() => handleMovieClick(movie.id)}
-        />
-      ))}
-      </div>
+       
+        <div className = "ModulosPeliculasDesign">
+          {moviesData.map(movie => (
+            <ModuloPelicula
+              key={movie.id}
+              title={movie.title}
+              backdropPath={movie.backdrop_path}
+              onClick={() => handleMovieClick(movie.id)}
+            />
+          ))}
+        </div>
 
       {selectedMovie && <DetallePelicula data={movieDetails.data} error={movieDetails.error} />}
 

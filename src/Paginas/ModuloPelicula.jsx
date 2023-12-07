@@ -4,7 +4,7 @@ import "./ModuloPelicula.css"
 
 export const ModuloPelicula = ({ title, backdropPath, onClick  }) => {
 
-  const imagenPorDefecto = 'https:picsum.photos/200/300';
+  const imagenPorDefecto = 'https:picsum.photos/1280/720';
 
   return (
     <div className="ModuloPelicula" onClick={onClick}>

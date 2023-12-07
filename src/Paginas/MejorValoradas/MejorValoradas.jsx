@@ -30,7 +30,7 @@ export const MejorValoradas = () => {
       .then(data => {
         const results = data.results || data;
 
-        setMoviesData(Array.isArray(results) ? results.slice(0, 10) : []);
+        setMoviesData(Array.isArray(results) ? results.slice(0, 12) : []);
       })
       .catch(err => console.error(err));
 }, []);
@@ -55,22 +55,24 @@ const handleMovieClick = async (identificador) => {
 
 
   return (
-    <div className="RecientesDesign">
-      <h1>Las 10 Películas mejor Valoradas</h1>
-      <div className = "ModulosPeliculasDesign">
+    <div>
+      <h1 className="TituloPrincipal">Las 12 Películas mejor Valoradas</h1>
+        <div className = "MejorValoradasBoxDesign">
+          <div className="PeliculasColumn">
+              {moviesData.map(movie => (
+                <ModuloPelicula
+                  key={movie.id}
+                  title={movie.title}
+                  backdropPath={movie.backdrop_path}
+                  onClick={() => handleMovieClick(movie.id)}
+                />
+              ))}
+          </div>
 
-      {moviesData.map(movie => (
-        <ModuloPelicula
-          key={movie.id}
-          title={movie.title}
-          backdropPath={movie.backdrop_path}
-          onClick={() => handleMovieClick(movie.id)}
-        />
-      ))}
-      </div>
-
-      {selectedMovie && <DetallePelicula data={movieDetails.data} error={movieDetails.error} />}
-
+          <div className="DetalleColumn">
+          {selectedMovie && <DetallePelicula data={movieDetails.data} error={movieDetails.error} />}
+          </div>
+        </div>
     </div>
   );
 };

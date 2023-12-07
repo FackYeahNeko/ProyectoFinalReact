@@ -2,3 +2,8 @@
     display: flex;
     flex-direction: row;
 }
+
+.RecientesDesign {
+    display: flex;
+    flex-direction: column;
+}
