@@ -30,7 +30,9 @@ export const MejorValoradas = () => {
       .then(data => {
         const results = data.results || data;
 
-        setMoviesData(Array.isArray(results) ? results.slice(0, 12) : []);
+        setMoviesData(Array.isArray(results) 
+        ? results.slice(0, 12) 
+        : []);
       })
       .catch(err => console.error(err));
   }, []);

@@ -4,7 +4,7 @@ import './Recientes.css'
 
 import React, { useEffect, useState } from 'react';
 import { ModuloPelicula } from '../ModuloPelicula';
-import { DetallePelicula } from '../DetallePelicula'; 
+import { DetallePelicula } from '../DetallePelicula';
 
 
 export const Recientes = () => {
@@ -31,36 +31,36 @@ export const Recientes = () => {
       .then(data => {
         const results = data.results || data;
 
-        setMoviesData(Array.isArray(results) 
-        ? results.slice(0, 10) 
-        : []);
+        setMoviesData(Array.isArray(results)
+          ? results.slice(0, 12)
+          : []);
       })
       .catch(err => console.error(err));
-}, []);
+  }, []);
 
-const handleMovieClick = async (identificador) => {
-  setSelectedMovie(identificador);
+  const handleMovieClick = async (identificador) => {
+    setSelectedMovie(identificador);
 
-  try {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${identificador}?api_key=${apiKey}`);
+    try {
+      const response = await fetch(`https://api.themoviedb.org/3/movie/${identificador}?api_key=${apiKey}`);
 
-    if (response.status === 200) {
-      const data = await response.json();
-      setMovieDetails({ data, error: null });
-    } else {
-      console.error(response);
-      throw new Error('Algo no funcionó');
+      if (response.status === 200) {
+        const data = await response.json();
+        setMovieDetails({ data, error: null });
+      } else {
+        console.error(response);
+        throw new Error('Algo no funcionó');
+      }
+    } catch (error) {
+      setMovieDetails({ data: null, error: error.message });
     }
-  } catch (error) {
-    setMovieDetails({ data: null, error: error.message });
-  }
-};
+  };
 
   return (
-    <div className="RecientesDesign">
-      <h1>Últimas 10 películas añadidas</h1>
-       
-        <div className = "ModulosPeliculasDesign">
+    <div>
+      <h1 className="TituloPrincipal">Últimas 12 películas añadidas</h1>
+      <div className="RecientesBoxDesign">
+        <div className="PeliculasColumn">
           {moviesData.map(movie => (
             <ModuloPelicula
               key={movie.id}
@@ -71,8 +71,10 @@ const handleMovieClick = async (identificador) => {
           ))}
         </div>
 
-      {selectedMovie && <DetallePelicula data={movieDetails.data} error={movieDetails.error} />}
-
+        <div className="DetalleColumn">
+          {selectedMovie && <DetallePelicula data={movieDetails.data} error={movieDetails.error} />}
+        </div>
+      </div>
     </div>
   );
 };

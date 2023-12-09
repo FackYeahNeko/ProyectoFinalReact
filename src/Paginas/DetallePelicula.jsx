@@ -3,6 +3,9 @@ import React from 'react';
 import "./DetallePelicula.css"
 
 export const DetallePelicula = ({ data, error }) => {
+
+  const imagenPorDefecto = 'https:picsum.photos/1280/720';
+
   return (
     <div className= "DetallePelicula">
       {data ? (
@@ -20,7 +23,7 @@ export const DetallePelicula = ({ data, error }) => {
         <p>{error || 'Loading...'}</p>
       )}
     </div>
-  );
+  );F
 };
 
 

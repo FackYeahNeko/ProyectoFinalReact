@@ -11,7 +11,7 @@ export const ModuloPelicula = ({ title, backdropPath, onClick }) => {
             <h2>{title}</h2>
             <img
                 src={backdropPath ? `https://image.tmdb.org/t/p/original${backdropPath}` : imagenPorDefecto}
-                alt={title}  
+                alt={title}
             />
         </div>
     );
