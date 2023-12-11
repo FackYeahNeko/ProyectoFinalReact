@@ -10,11 +10,11 @@ export const Body = () => {
     return (
         <>
             <Routes>
-                <Route path="*" element={<Navigate to={"/"}/>}/>
-                <Route path="/" element={<Home />}/>
-                <Route path="/Busqueda" element= {<Busqueda/> }/>
-                <Route path="/MejorValoradas" element= {<MejorValoradas/> }/>
-                <Route path="/Recientes" element= {<Recientes/> }/>
+                <Route path="*" element={<Navigate to={"/"} />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/Busqueda" element={<Busqueda />} />
+                <Route path="/MejorValoradas" element={<MejorValoradas />} />
+                <Route path="/Recientes" element={<Recientes />} />
             </Routes>
         </>
     )
