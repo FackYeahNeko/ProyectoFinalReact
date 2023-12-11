@@ -1,6 +1,8 @@
 import './Busqueda.css';
-import { useState } from 'react';
 
+
+import React, { useEffect, useState } from 'react';
+import { ModuloPelicula } from '../ModuloPelicula';
 import { DetallePelicula } from '../DetallePelicula';
 
 export const Busqueda = () => {
@@ -15,18 +17,23 @@ export const Busqueda = () => {
     setBusqueda(event.target.value);
   };
 
-  const handleBuscarClick = () => {
+const handleBuscarClick = async () => {
+  try {
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(busqueda)}`;
+    const response = await fetch(url);
 
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setResultados(data.results);
-      })
-      .catch((error) => {
-        console.error('Error al realizar la búsqueda en TMDB:', error);
-      });
-  };
+    if (response.ok) {
+      const data = await response.json();
+      setResultados(data.results);
+      setSelectedMovie(null);
+      setMovieDetails({ data: null, error: null });
+    } else {
+      console.error('Error al realizar la búsqueda en TMDB:', response);
+    }
+  } catch (error) {
+    console.error('Error al realizar la búsqueda en TMDB:', error);
+  }
+};
 
   const handleMovieClick = async (identificador) => {
     setSelectedMovie(identificador);
@@ -51,15 +58,18 @@ export const Busqueda = () => {
       <h1>Introduce aqui tu busqueda</h1>
       <input type="text" onChange={handleInputChange} value={busqueda} />
       <button onClick={handleBuscarClick}>Buscar</button>
-
+  
       <div className="ResultadosBusqueda">
-        <ul>
+        <div className="PeliculasColumn">
           {resultados.map((resultado) => (
-            <li key={resultado.id} onClick={() => handleMovieClick(resultado.id)}>
-              {resultado.title}
-            </li>
+            <ModuloPelicula
+              key={resultado.id}
+              title={resultado.title}
+              backdropPath={resultado.backdrop_path}
+              onClick={() => handleMovieClick(resultado.id)}
+            />
           ))}
-        </ul>
+        </div>
         <div className="DetalleBusqueda">
           {selectedMovie && <DetallePelicula data={movieDetails.data} error={movieDetails.error} />}
         </div>

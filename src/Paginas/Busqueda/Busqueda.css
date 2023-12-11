@@ -1,11 +1,35 @@
-.ResultadosBusqueda{
-    height: 100vh;
-     width: 100vw;
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     grid-template-rows: 1fr;
+.TituloPrincipal {
+    height: 60px;
+    justify-content: center;
+    padding-top: 10px;
 }
 
-.ResultadosBusqueda h1 {
-    padding-top: 10px;
+
+.BusquedaBoxDesign {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "PeliculasColumn .";
+}
+
+.PeliculasColumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ". . . ."
+        ". . . ."
+        ". . . .";
+    grid-area: PeliculasColumn;
+    gap: 10px;
+}
+
+.DetalleColumn {
+   position: sticky;
+   
 }
