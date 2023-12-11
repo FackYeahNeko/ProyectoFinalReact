@@ -1,7 +1,7 @@
 import './Busqueda.css';
-import { useState} from 'react';
+import { useState } from 'react';
 
-import { DetallePelicula } from '../DetallePelicula'; 
+import { DetallePelicula } from '../DetallePelicula';
 
 export const Busqueda = () => {
   const [busqueda, setBusqueda] = useState('');
@@ -48,20 +48,22 @@ export const Busqueda = () => {
 
   return (
     <div className="BusquedaDesign">
-      <h1>Soy una búsqueda</h1>
+      <h1>Introduce aqui tu busqueda</h1>
       <input type="text" onChange={handleInputChange} value={busqueda} />
       <button onClick={handleBuscarClick}>Buscar</button>
-      <div className="ResultadosBusquedaDesign">
-        Aquí van los resultados de la búsqueda
+
+      <div className="ResultadosBusqueda">
+        <ul>
+          {resultados.map((resultado) => (
+            <li key={resultado.id} onClick={() => handleMovieClick(resultado.id)}>
+              {resultado.title}
+            </li>
+          ))}
+        </ul>
+        <div className="DetalleBusqueda">
+          {selectedMovie && <DetallePelicula data={movieDetails.data} error={movieDetails.error} />}
+        </div>
       </div>
-      <ul>
-        {resultados.map((resultado) => (
-          <li key={resultado.id} onClick={() => handleMovieClick(resultado.id)}>
-            {resultado.title}
-          </li>
-        ))}
-      </ul>
-      {selectedMovie && <DetallePelicula data={movieDetails.data} error={movieDetails.error} />}
     </div>
   );
 };
