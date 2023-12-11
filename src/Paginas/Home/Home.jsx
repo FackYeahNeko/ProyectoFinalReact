@@ -4,8 +4,11 @@ import "./Home.css"
 
 export const Home = () => {
     return (
-        <div className="HomeDesign">
-            <h1> Soy un Home </h1>
+        <div>
+            <div className="HomeDesign">
+                <h1> Bienvenido </h1>
+                <img src="src\Paginas\Home\HomeFondo.gif" alt="https:picsum.photos/1280/720" />
+            </div>
         </div>
     )
 }

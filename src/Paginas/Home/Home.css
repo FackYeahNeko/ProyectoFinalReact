@@ -1,0 +1,16 @@
+
+.HomeDesign {
+    text-align: center;
+    background-color: black;
+}
+
+.HomeDesign h1 {
+    font-size: 3em;
+    line-height: 1.0;
+    position: relative;
+    top: 160px;
+}
+.HomeDesign img {
+    width: 100vw;
+    height: 100vh;
+}
