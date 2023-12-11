@@ -7,7 +7,7 @@ export const Home = () => {
         <div>
             <div className="HomeDesign">
                 <h1> Bienvenido </h1>
-                <img src="src\Paginas\Home\HomeFondo.gif" alt="https:picsum.photos/1280/720" />
+                <img src="src\Paginas\Home\HomeFondo.gif" />
             </div>
         </div>
     )
