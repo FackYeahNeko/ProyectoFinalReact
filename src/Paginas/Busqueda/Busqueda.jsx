@@ -55,7 +55,7 @@ const handleBuscarClick = async () => {
 
   return (
     <div className="BusquedaDesign">
-      <h1>Introduce aqui tu busqueda</h1>
+      <h1 classNAme="TituloPrincipal">Introduce aqui tu busqueda</h1>
       <input type="text" onChange={handleInputChange} value={busqueda} />
       <button onClick={handleBuscarClick}>Buscar</button>
   

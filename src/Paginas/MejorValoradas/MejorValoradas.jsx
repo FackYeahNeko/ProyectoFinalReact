@@ -65,7 +65,7 @@ export const MejorValoradas = () => {
             <ModuloPelicula
               key={movie.id}
               title={movie.title}
-              backdropPath={movie.backdrop_path}
+              backdropPath={movie.poster_path}
               onClick={() => handleMovieClick(movie.id)}
             />
           ))}
