@@ -1,13 +1,12 @@
 .TituloPrincipal {
     height: 60px;
     justify-content: center;
-    padding-top: 10px;
+    padding-top: 20px;
 }
-
 
 .ResultadosBusqueda {
     height: 100vh;
-    width: 100vw;
+    width: 98vw;
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr;
